@@ -13,10 +13,10 @@ myApp.controller('HomeController', ['$http', function($http) {
   }
 
   hc.addUsers = function() {
-    console.log('add listing', hc.newListing);
+    console.log('add users', hc.newListing);
     $http.post('/user', hc.newListing)
     .then(function(response) {
-      console.log('added listing', response);
+      console.log('added users', response);
       getUsers();
     });
   }

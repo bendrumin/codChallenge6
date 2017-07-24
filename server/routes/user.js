@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Person = require('../models/messageboard.schema.js');
+var User = require('../models/messageboard.schema.js');
 
 // return all Users
 router.get('/', function(req, res) {

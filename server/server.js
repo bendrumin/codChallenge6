@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var index = require('./routes/index.js');
-var index = require('./routes/user.js');
+var user = require('./routes/user.js');
 var mongoose = require('mongoose');
 var app = express();
 
@@ -14,8 +14,8 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.json()); // needed for angular requests
 
 /** ---------- EXPRESS ROUTES ---------- **/
-app.use('/', index);
 app.use('/user', user);
+app.use('/', index);
 
 
 /** -------- MONGOOSE CONNECTION --------**/

@@ -13,15 +13,15 @@
 </header>
 <body ng-app="myApp" class="container">
 <h1>Hi</h1>
-<div class="container">
+<div class="container" ng-controller="HomeController as hc">
   <div class="row">
     <div class="col-md-2 inputForm form-group">
       <form>
         <label for="name">Username: </label>
         <input type="text" class="form-control" ng-model="hc.newUser.name" id="name" placeholder="name" />
         <label for="location">Message </label>
-        <input type="text" class="form-control" ng-model="lc.newUser.message" id="message" placeholder="message" />
-        <button class="btn btn-primary" ng-click="lc.addUser()">Add user</button>
+        <input type="text" class="form-control" ng-model="hc.newUser.message" id="message" placeholder="message" />
+        <button class="btn btn-primary" ng-click="hc.addUser()">Add user</button>
       </form>
     </div>
     <div class="col-md-10">
@@ -33,8 +33,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="people in hc.Users">
-          <td> {{ people.user }}   </td>
+        <tr ng-repeat="people in hc.users">
+          <td> {{ people.name }}   </td>
           <td> {{ people.message }}   </td>
         </tr>
       </tbody>

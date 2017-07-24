@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prime Angular Application</title>
+  <script src="/vendor/angular.min.js" charset="utf-8"></script>
+  <script src="/vendor/angular-route.min.js" charset="utf-8"></script>
+
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/home.controller.js" charset="utf-8"></script>
+
+  <link rel="stylesheet" href="/vendor/bootstrap.min.css" />
+</head>
+</header>
+<body ng-app="myApp" class="container">
+<h1>Hi</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 inputForm form-group">
+      <form>
+        <label for="name">Username: </label>
+        <input type="text" class="form-control" ng-model="hc.newUser.name" id="name" placeholder="name" />
+        <label for="location">Message </label>
+        <input type="text" class="form-control" ng-model="lc.newUser.message" id="message" placeholder="message" />
+        <button class="btn btn-primary" ng-click="lc.addUser()">Add user</button>
+      </form>
+    </div>
+    <div class="col-md-10">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="people in hc.Users">
+          <td> {{ people.user }}   </td>
+          <td> {{ people.message }}   </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
